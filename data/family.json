@@ -1,0 +1,216 @@
+{
+    "family_name": "Nama Keluarga",
+
+    "people": [
+
+        {
+            "id": "p001",
+            "name": "",
+            "nickname": "",
+            "gender": "L",
+            "generation": 1,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/kakek.jpg",
+
+            "spouse_ids": [
+                "p002"
+            ],
+
+            "parent_ids": [],
+
+            "children_ids": [
+                "p101",
+                "p102",
+                "p103",
+                "p104",
+                "p105",
+                "p106",
+                "p107",
+                "p108"
+            ]
+        },
+
+
+        {
+            "id": "p002",
+            "name": "",
+            "nickname": "",
+            "gender": "P",
+            "generation": 1,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/nenek.jpg",
+
+            "spouse_ids": [
+                "p001"
+            ],
+
+            "parent_ids": [],
+
+            "children_ids": [
+                "p101",
+                "p102",
+                "p103",
+                "p104",
+                "p105",
+                "p106",
+                "p107",
+                "p108"
+            ]
+        },
+
+
+        {
+            "id": "p101",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-01.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p102",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-02.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p103",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-03.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p104",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-04.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p105",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-05.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p106",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-06.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p107",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-07.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        },
+
+
+        {
+            "id": "p108",
+            "name": "",
+            "nickname": "",
+            "gender": "",
+            "generation": 2,
+            "birth_year": null,
+            "death_year": null,
+            "photo": "photos/anak-08.jpg",
+
+            "spouse_ids": [],
+            "parent_ids": [
+                "p001",
+                "p002"
+            ],
+            "children_ids": []
+        }
+
+    ]
+}
