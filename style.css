@@ -159,10 +159,10 @@ h2 {
     font-weight: 700;
 }
 
-/* ANAK-ANAK (LEBIH BESAR) */
+/* KARTU ANAK (DIBERBESAR & HANYA FOTO + NAMA) */
 .children-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Diubah jadi 3 kolom agar card lebih lebar */
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
@@ -170,18 +170,20 @@ h2 {
     background: white;
     border: 1px solid #e1e8df;
     border-radius: 20px;
-    padding: 30px 20px; /* Padding ditambah agar card lebih tinggi & megah */
+    padding: 30px 20px;
     text-align: center;
     transition: .25s;
+    cursor: pointer;
 }
 
 .child-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(40,70,45,.12);
+    border-color: var(--secondary);
 }
 
 .child-photo {
-    width: 120px; /* Ukuran foto diperbesar dari 75px */
+    width: 120px;
     height: 120px;
     margin: 0 auto 16px;
     border-radius: 50%;
@@ -192,7 +194,153 @@ h2 {
 }
 
 .child-card .person-name {
-    font-size: 20px; /* Ukuran nama diperbesar */
+    font-size: 20px;
+}
+
+/* MODAL STYLES */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 4% auto;
+    padding: 30px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 750px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--muted);
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.modal-family-photo {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.couple-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0 30px;
+    background: #f8faf7;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.couple-person {
+    text-align: center;
+    width: 120px;
+}
+
+.couple-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.heart-icon {
+    font-size: 24px;
+    color: #e25252;
+}
+
+.modal-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--background);
+    padding-bottom: 8px;
+}
+
+.children-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.child-tree-card {
+    background: #f8faf7;
+    border-radius: 16px;
+    padding: 15px 20px;
+}
+
+.child-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.child-tree-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.grandchildren-list {
+    margin-top: 12px;
+    padding-left: 62px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.grandchild-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    border: 1px solid var(--line);
+}
+
+.grandchild-photo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* INFO */
@@ -229,35 +377,20 @@ footer {
 }
 
 @media(max-width: 600px) {
-    .family-section {
-        padding: 22px 14px;
-    }
-
-    .grandparents {
-        gap: 12px;
-    }
-
-    .person-card {
-        width: 100%;
-        padding: 16px 10px;
-    }
-
-    .photo {
-        width: 85px;
-        height: 85px;
-    }
-
     .children-grid {
-        grid-template-columns: 1fr; /* 1 Kolom di layar HP agar kartu anak tetap besar */
-        gap: 16px;
+        grid-template-columns: 1fr;
     }
-
-    .child-card {
-        padding: 20px 15px;
+    .couple-container {
+        gap: 10px;
     }
-
-    .child-photo {
-        width: 100px;
-        height: 100px;
+    .couple-person {
+        width: 90px;
+    }
+    .couple-photo {
+        width: 60px;
+        height: 60px;
+    }
+    .grandchildren-list {
+        padding-left: 0;
     }
 }
