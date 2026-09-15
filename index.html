@@ -3,50 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAHMAT SYARIAH</title>
+    <title>Pohon Keluarga</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="hero">
-        <div class="badge">SILSILAH KELUARGA BESAR</div>
+        <div class="badge">SILSILAH KELUARGA</div>
         <h1>RAHMAT SYARIAH FAMILY</h1>
         <p>Satu keluarga, banyak cerita, satu garis keturunan.</p>
     </header>
 
     <main class="container">
 
-        <!-- STATISTIK KELUARGA -->
-        <section class="stats-section">
-            <div class="stats-header">
-                <span>REKAPITULASI</span>
-                <h2>Total Anggota Keluarga: <span id="total-members">0</span> Orang</h2>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-num" id="count-gen1">0</span>
-                    <span class="stat-label">Kakek & Nenek</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num" id="count-gen2">0</span>
-                    <span class="stat-label">Anak (Gen 2)</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num" id="count-gen3">0</span>
-                    <span class="stat-label">Cucu (Gen 3)</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num" id="count-gen4">0</span>
-                    <span class="stat-label">Cicit (Gen 4)</span>
-                </div>
-                <div class="stat-card highlight">
-                    <span class="stat-num" id="count-inlaws">0</span>
-                    <span class="stat-label">Menantu</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- GENERASI 1 -->
+        <!-- GENERASI 1 & 2 -->
         <section class="family-section">
 
             <div class="section-title">
@@ -77,6 +47,22 @@
                 <!-- Diisi otomatis oleh app.js -->
             </div>
 
+        </section>
+
+        <!-- KARTU STATISTIK RINGKAS (DI BAWAH) -->
+        <section class="summary-card">
+            <div class="summary-header">
+                <span>REKAPITULASI DATAKELUARGA</span>
+                <h2 id="total-members">0 Anggota Keluarga</h2>
+            </div>
+            
+            <div class="summary-pills">
+                <div class="pill">👴👵 Kakek & Nenek: <strong id="count-gen1">0</strong></div>
+                <div class="pill">👨‍👩‍👧 Anak (Gen 2): <strong id="count-gen2">0</strong></div>
+                <div class="pill">👶 Cucu (Gen 3): <strong id="count-gen3">0</strong></div>
+                <div class="pill">🍼 Cicit (Gen 4): <strong id="count-gen4">0</strong></div>
+                <div class="pill highlight">💍 Menantu: <strong id="count-inlaws">0</strong></div>
+            </div>
         </section>
 
         <!-- INFORMASI -->
