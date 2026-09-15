@@ -10,13 +10,70 @@ async function loadFamily() {
             throw new Error("Database tidak ditemukan");
         }
         familyData = await response.json();
+        
+        renderStats();
         renderFamily();
     } catch (error) {
         console.error(error);
         document.getElementById("grandparents").innerHTML = `
-            <p>Database belum bisa dibaca.</p>
+            <p>Database belum bisa dibaca atau ada kesalahan format JSON.</p>
         `;
     }
+}
+
+/* =========================
+   HITUNG & RENDER STATISTIK
+========================= */
+function renderStats() {
+    const people = familyData.people;
+
+    let gen1 = 0;
+    let gen2 = 0;
+    let gen3 = 0;
+    let gen4 = 0;
+    let inlaws = 0; // Menantu
+
+    people.forEach(person => {
+        // Gen 1 (Kakek & Nenek)
+        if (person.generation === 1) {
+            gen1++;
+        }
+
+        // Gen 2 (Anak)
+        if (person.generation === 2) {
+            gen2++;
+            // Menantu Gen 2
+            if (person.spouse && person.spouse.name) {
+                inlaws++;
+            }
+
+            // Gen 3 (Cucu)
+            if (person.children && person.children.length > 0) {
+                person.children.forEach(child => {
+                    gen3++;
+                    // Menantu Gen 3
+                    if (child.spouse && child.spouse.name) {
+                        inlaws++;
+                    }
+
+                    // Gen 4 (Cicit)
+                    if (child.grandchildren && child.grandchildren.length > 0) {
+                        gen4 += child.grandchildren.length;
+                    }
+                });
+            }
+        }
+    });
+
+    const totalAll = gen1 + gen2 + gen3 + gen4 + inlaws;
+
+    // Tampilkan di UI
+    document.getElementById("total-members").textContent = totalAll;
+    document.getElementById("count-gen1").textContent = gen1;
+    document.getElementById("count-gen2").textContent = gen2;
+    document.getElementById("count-gen3").textContent = gen3;
+    document.getElementById("count-gen4").textContent = gen4;
+    document.getElementById("count-inlaws").textContent = inlaws;
 }
 
 /* =========================
@@ -25,10 +82,7 @@ async function loadFamily() {
 function renderFamily() {
     const people = familyData.people;
 
-    // Generasi 1: Kakek & Nenek
     const grandparents = people.filter(person => person.generation === 1);
-    
-    // Generasi 2: Anak-anak
     const children = people.filter(person => person.generation === 2);
 
     renderGrandparents(grandparents);
@@ -57,7 +111,7 @@ function renderChildren(children) {
     container.innerHTML = "";
 
     children.forEach((person, index) => {
-        const photo = person.photo
+        const photo = (person.photo && person.photo !== "" && person.photo !== "-")
             ? `<img class="child-photo" src="${person.photo}" alt="${person.name}">`
             : `<div class="child-photo placeholder">👤</div>`;
 
@@ -70,11 +124,8 @@ function renderChildren(children) {
     });
 }
 
-/* =========================
-   CARD KAKEK/NENEK
-========================= */
 function createPersonCard(person) {
-    const photo = person.photo
+    const photo = (person.photo && person.photo !== "" && person.photo !== "-")
         ? `<img class="photo" src="${person.photo}" alt="${person.name}">`
         : `<div class="photo placeholder">👤</div>`;
 
@@ -94,31 +145,29 @@ function openModal(index) {
     const person = children[index];
     const modalBody = document.getElementById("modal-body");
 
-    // Render Pasangan
-    const spouseName = person.spouse ? person.spouse.name : "Belum Ada Data";
-    const spousePhoto = person.spouse && person.spouse.photo 
+    const spouseName = (person.spouse && person.spouse.name) ? person.spouse.name : "Belum Ada Data";
+    
+    const spousePhoto = (person.spouse && person.spouse.photo && person.spouse.photo !== "" && person.spouse.photo !== "-") 
         ? `<img src="${person.spouse.photo}" class="couple-photo" alt="${spouseName}">` 
         : `<div class="couple-photo placeholder">👤</div>`;
     
-    const mainPhoto = person.photo 
+    const mainPhoto = (person.photo && person.photo !== "" && person.photo !== "-") 
         ? `<img src="${person.photo}" class="couple-photo" alt="${person.name}">` 
         : `<div class="couple-photo placeholder">👤</div>`;
 
-    // Render Anak-anak & Cucu
     let childrenHTML = "";
     if (person.children && person.children.length > 0) {
         childrenHTML = person.children.map(child => {
-            const childPhoto = child.photo 
+            const childPhoto = (child.photo && child.photo !== "" && child.photo !== "-") 
                 ? `<img src="${child.photo}" class="child-tree-photo" alt="${child.name}">` 
                 : `<div class="child-tree-photo placeholder" style="font-size:20px;">👤</div>`;
 
-            let spouseText = child.spouse ? ` ❤️ ${child.spouse.name}` : "";
+            let spouseText = (child.spouse && child.spouse.name) ? ` ❤️ <strong>${child.spouse.name}</strong>` : "";
 
-            // Render Cucu
             let grandchildrenHTML = "";
             if (child.grandchildren && child.grandchildren.length > 0) {
                 const gcBadges = child.grandchildren.map(gc => {
-                    const gcPhoto = gc.photo 
+                    const gcPhoto = (gc.photo && gc.photo !== "" && gc.photo !== "-") 
                         ? `<img src="${gc.photo}" class="grandchild-photo" alt="${gc.name}">` 
                         : `👤`;
                     return `<div class="grandchild-badge">${gcPhoto} <span>${gc.name}</span></div>`;
@@ -126,7 +175,7 @@ function openModal(index) {
 
                 grandchildrenHTML = `
                     <div class="grandchildren-list">
-                        <span style="font-size: 12px; color: var(--muted); align-self: center;">Cucu:</span>
+                        <span style="font-size: 12px; color: var(--muted); align-self: center;">Cicit:</span>
                         ${gcBadges}
                     </div>
                 `;
@@ -148,11 +197,14 @@ function openModal(index) {
         childrenHTML = "<p style='color: var(--muted);'>Belum ada data anak/cucu.</p>";
     }
 
-    // Render Isi Modal
+    const familyPhotoHTML = (person.familyPhoto && person.familyPhoto !== "" && person.familyPhoto !== "-")
+        ? `<img src="${person.familyPhoto}" class="modal-family-photo" alt="Foto Keluarga">`
+        : '';
+
     modalBody.innerHTML = `
         <div class="modal-header">
             <h2>Keluarga ${person.name}</h2>
-            ${person.familyPhoto ? `<img src="${person.familyPhoto}" class="modal-family-photo" alt="Foto Keluarga">` : ''}
+            ${familyPhotoHTML}
         </div>
 
         <div class="couple-container">
@@ -167,7 +219,7 @@ function openModal(index) {
             </div>
         </div>
 
-        <div class="modal-section-title">Anak & Cucu</div>
+        <div class="modal-section-title">Anak (Cucu) & Cicit</div>
         <div class="children-tree">
             ${childrenHTML}
         </div>
@@ -180,7 +232,6 @@ function closeModal() {
     document.getElementById("family-modal").style.display = "none";
 }
 
-// Tutup modal jika klik di luar box
 window.onclick = function(event) {
     const modal = document.getElementById("family-modal");
     if (event.target === modal) {
@@ -188,7 +239,4 @@ window.onclick = function(event) {
     }
 };
 
-/* =========================
-   START
-========================= */
 loadFamily();
