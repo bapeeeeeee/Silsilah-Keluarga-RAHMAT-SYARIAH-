@@ -3,41 +3,52 @@
     {
       "id": "g1_1",
       "generation": 1,
-      "name": "Kakek Ahmad",
-      "photo": "images/kakek.jpg"
+      "name": "RACHMAT",
+      "photo": "-"
     },
     {
       "id": "g1_2",
       "generation": 1,
-      "name": "Nenek Siti",
-      "photo": "images/nenek.jpg"
+      "name": "SARIYAH",
+      "photo": "-"
     },
     {
       "id": "g2_1",
       "generation": 2,
-      "name": "Budi Santoso",
-      "photo": "images/budi.jpg",
+      "name": "INDRA ERWANA",
+      "photo": "-",
       "spouse": {
-        "name": "Rina Wati",
-        "photo": "images/rina.jpg"
+        "name": "ADE HOLISOH",
+        "photo": "-"
       },
-      "familyPhoto": "images/keluarga-budi.jpg",
+      "familyPhoto": "-",
       "children": [
         {
-          "name": "Andi Santoso",
-          "photo": "images/andi.jpg",
+          "name": "TEH ICA",
+          "photo": "-",
           "spouse": {
-            "name": "Siska",
-            "photo": "images/siska.jpg"
+            "name": "A BUDI",
+            "photo": "-"
           },
           "grandchildren": [
-            { "name": "Doni", "photo": "images/doni.jpg" },
-            { "name": "Dina", "photo": "images/dina.jpg" }
+            { "name": "ALI", "photo": "-" },
+            { "name": "UMAR", "photo": "-" }
           ]
         },
         {
-          "name": "Citra Santoso",
+          "name": "ERIKA",
           "photo": "images/citra.jpg",
+          "spouse": null,
+          "grandchildren": []
+        }
+      ]
+    },
+    {
+          ]
+        },
+        {
+          "name": "ERFAN",
+          "photo": "-",
           "spouse": null,
           "grandchildren": []
         }
@@ -46,13 +57,13 @@
     {
       "id": "g2_2",
       "generation": 2,
-      "name": "Eko Prasetyo",
-      "photo": "images/eko.jpg",
+      "name": "WA TAVIP",
+      "photo": "-",
       "spouse": {
-        "name": "Dewi Maya",
-        "photo": "images/dewi.jpg"
+        "name": "WA LINA",
+        "photo": "-"
       },
-      "familyPhoto": "images/keluarga-eko.jpg",
+      "familyPhoto": "-",
       "children": [
         {
           "name": "Fajar Prasetyo",
