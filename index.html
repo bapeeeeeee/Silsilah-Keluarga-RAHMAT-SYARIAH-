@@ -3,18 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RACHMAT SYARIAH FAMILY</title>
+    <title>Pohon Keluarga</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="hero">
-        <div class="badge">SILSILAH KELUARGA</div>
-        <h1>RACHMAT SYARIAH FAMILY</h1>
+        <div class="badge">🌳 FAMILY TREE</div>
+        <h1>Pohon Keluarga</h1>
         <p>Satu keluarga, banyak cerita, satu garis keturunan.</p>
     </header>
 
     <main class="container">
+
+        <!-- STATISTIK KELUARGA -->
+        <section class="stats-section">
+            <div class="stats-header">
+                <span>REKAPITULASI</span>
+                <h2>Total Anggota Keluarga: <span id="total-members">0</span> Orang</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-num" id="count-gen1">0</span>
+                    <span class="stat-label">Kakek & Nenek</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" id="count-gen2">0</span>
+                    <span class="stat-label">Anak (Gen 2)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" id="count-gen3">0</span>
+                    <span class="stat-label">Cucu (Gen 3)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" id="count-gen4">0</span>
+                    <span class="stat-label">Cicit (Gen 4)</span>
+                </div>
+                <div class="stat-card highlight">
+                    <span class="stat-num" id="count-inlaws">0</span>
+                    <span class="stat-label">Menantu</span>
+                </div>
+            </div>
+        </section>
 
         <!-- GENERASI 1 -->
         <section class="family-section">
