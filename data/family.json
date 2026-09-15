@@ -1,216 +1,66 @@
 {
-    "family_name": "Nama Keluarga",
-
-    "people": [
-
+  "people": [
+    {
+      "id": "g1_1",
+      "generation": 1,
+      "name": "Kakek Ahmad",
+      "photo": "images/kakek.jpg"
+    },
+    {
+      "id": "g1_2",
+      "generation": 1,
+      "name": "Nenek Siti",
+      "photo": "images/nenek.jpg"
+    },
+    {
+      "id": "g2_1",
+      "generation": 2,
+      "name": "Budi Santoso",
+      "photo": "images/budi.jpg",
+      "spouse": {
+        "name": "Rina Wati",
+        "photo": "images/rina.jpg"
+      },
+      "familyPhoto": "images/keluarga-budi.jpg",
+      "children": [
         {
-            "id": "p001",
-            "name": "",
-            "nickname": "",
-            "gender": "L",
-            "generation": 1,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "Anak1.webp",
-
-            "spouse_ids": [
-                "p002"
-            ],
-
-            "parent_ids": [],
-
-            "children_ids": [
-                "p101",
-                "p102",
-                "p103",
-                "p104",
-                "p105",
-                "p106",
-                "p107",
-                "p108"
-            ]
+          "name": "Andi Santoso",
+          "photo": "images/andi.jpg",
+          "spouse": {
+            "name": "Siska",
+            "photo": "images/siska.jpg"
+          },
+          "grandchildren": [
+            { "name": "Doni", "photo": "images/doni.jpg" },
+            { "name": "Dina", "photo": "images/dina.jpg" }
+          ]
         },
-
-
         {
-            "id": "p002",
-            "name": "",
-            "nickname": "",
-            "gender": "P",
-            "generation": 1,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/nenek.jpg",
-
-            "spouse_ids": [
-                "p001"
-            ],
-
-            "parent_ids": [],
-
-            "children_ids": [
-                "p101",
-                "p102",
-                "p103",
-                "p104",
-                "p105",
-                "p106",
-                "p107",
-                "p108"
-            ]
-        },
-
-
-        {
-            "id": "p101",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-01.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p102",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-02.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p103",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-03.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p104",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-04.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p105",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-05.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p106",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-06.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p107",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-07.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
-        },
-
-
-        {
-            "id": "p108",
-            "name": "",
-            "nickname": "",
-            "gender": "",
-            "generation": 2,
-            "birth_year": null,
-            "death_year": null,
-            "photo": "photos/anak-08.jpg",
-
-            "spouse_ids": [],
-            "parent_ids": [
-                "p001",
-                "p002"
-            ],
-            "children_ids": []
+          "name": "Citra Santoso",
+          "photo": "images/citra.jpg",
+          "spouse": null,
+          "grandchildren": []
         }
-
-    ]
+      ]
+    },
+    {
+      "id": "g2_2",
+      "generation": 2,
+      "name": "Eko Prasetyo",
+      "photo": "images/eko.jpg",
+      "spouse": {
+        "name": "Dewi Maya",
+        "photo": "images/dewi.jpg"
+      },
+      "familyPhoto": "images/keluarga-eko.jpg",
+      "children": [
+        {
+          "name": "Fajar Prasetyo",
+          "photo": "images/fajar.jpg",
+          "spouse": null,
+          "grandchildren": []
+        }
+      ]
+    }
+  ]
 }
