@@ -16,7 +16,7 @@ async function loadFamily() {
     } catch (error) {
         console.error(error);
         document.getElementById("grandparents").innerHTML = `
-            <p>Database belum bisa dibaca atau ada kesalahan format JSON.</p>
+            <p>Database belum bisa dibaca. Pastikan format family.json benar.</p>
         `;
     }
 }
@@ -31,32 +31,26 @@ function renderStats() {
     let gen2 = 0;
     let gen3 = 0;
     let gen4 = 0;
-    let inlaws = 0; // Menantu
+    let inlaws = 0;
 
     people.forEach(person => {
-        // Gen 1 (Kakek & Nenek)
         if (person.generation === 1) {
             gen1++;
         }
 
-        // Gen 2 (Anak)
         if (person.generation === 2) {
             gen2++;
-            // Menantu Gen 2
             if (person.spouse && person.spouse.name) {
                 inlaws++;
             }
 
-            // Gen 3 (Cucu)
             if (person.children && person.children.length > 0) {
                 person.children.forEach(child => {
                     gen3++;
-                    // Menantu Gen 3
                     if (child.spouse && child.spouse.name) {
                         inlaws++;
                     }
 
-                    // Gen 4 (Cicit)
                     if (child.grandchildren && child.grandchildren.length > 0) {
                         gen4 += child.grandchildren.length;
                     }
@@ -67,8 +61,7 @@ function renderStats() {
 
     const totalAll = gen1 + gen2 + gen3 + gen4 + inlaws;
 
-    // Tampilkan di UI
-    document.getElementById("total-members").textContent = totalAll;
+    document.getElementById("total-members").textContent = `${totalAll} Anggota Keluarga`;
     document.getElementById("count-gen1").textContent = gen1;
     document.getElementById("count-gen2").textContent = gen2;
     document.getElementById("count-gen3").textContent = gen3;
