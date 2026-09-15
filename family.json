@@ -4,51 +4,46 @@
       "id": "g1_1",
       "generation": 1,
       "name": "RACHMAT",
-      "photo": "-"
+      "photo": ""
     },
     {
       "id": "g1_2",
       "generation": 1,
       "name": "SARIYAH",
-      "photo": "-"
+      "photo": ""
     },
     {
       "id": "g2_1",
       "generation": 2,
       "name": "INDRA ERWANA",
-      "photo": "-",
+      "photo": "",
       "spouse": {
         "name": "ADE HOLISOH",
-        "photo": "-"
+        "photo": ""
       },
-      "familyPhoto": "-",
+      "familyPhoto": "",
       "children": [
         {
           "name": "TEH ICA",
-          "photo": "-",
+          "photo": "",
           "spouse": {
             "name": "A BUDI",
-            "photo": "-"
+            "photo": ""
           },
           "grandchildren": [
-            { "name": "ALI", "photo": "-" },
-            { "name": "UMAR", "photo": "-" }
-          ]
-        },
-        {
-          "name": "ERIKA",
-          "photo": "images/citra.jpg",
-          "spouse": null,
-          "grandchildren": []
-        }
-      ]
-    },
-    {
+            { "name": "ALI", "photo": "" },
+            { "name": "UMAR", "photo": "" }
           ]
         },
         {
           "name": "ERFAN",
-          "photo": "-",
+          "photo": "",
+          "spouse": null,
+          "grandchildren": []
+        },
+        {
+          "name": "ERIKA",
+          "photo": "",
           "spouse": null,
           "grandchildren": []
         }
@@ -58,16 +53,16 @@
       "id": "g2_2",
       "generation": 2,
       "name": "WA TAVIP",
-      "photo": "-",
+      "photo": "",
       "spouse": {
         "name": "WA LINA",
-        "photo": "-"
+        "photo": ""
       },
-      "familyPhoto": "-",
+      "familyPhoto": "",
       "children": [
         {
           "name": "Fajar Prasetyo",
-          "photo": "images/fajar.jpg",
+          "photo": "",
           "spouse": null,
           "grandchildren": []
         }
