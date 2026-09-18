@@ -296,10 +296,12 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* FOTO KELUARGA (REVISI SUPAYA TIDAK KEPOTONG) */
 .modal-family-photo {
     width: 100%;
-    max-height: 320px;
-    object-fit: cover;
+    height: auto;           /* Mengikuti proporsi asli gambar */
+    max-height: 450px;      /* Batas tinggi maksimum */
+    object-fit: contain;    /* Tampilkan seluruh foto utuh tanpa dipotong */
     border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
