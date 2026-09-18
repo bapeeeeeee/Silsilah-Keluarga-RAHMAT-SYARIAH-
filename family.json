@@ -4,13 +4,19 @@
       "id": "g1_1",
       "generation": 1,
       "name": "RACHMAT",
-      "photo": "photos/fotokakek.png"
+      "photo": "photos/fotokakek.png",
+      "birth": "15 Agustus 1940",
+      "death": "10 Oktober 2015",
+      "notes": "Kakek / Pendiri Keluarga Besar"
     },
     {
       "id": "g1_2",
       "generation": 1,
       "name": "SARIYAH",
-      "photo": "photos/fotonenek.png"
+      "photo": "photos/fotonenek.png",
+      "birth": "20 Mei 1945",
+      "death": "Masih Ada",
+      "notes": "Nenek"
     },
     {
       "id": "g2_1",
@@ -21,7 +27,7 @@
         "name": "ADE HOLISOH",
         "photo": ""
       },
-      "familyPhoto": "",
+      "familyPhoto": "photos/keluarga-indra.jpg",
       "children": [
         {
           "name": "TEH ICA",
@@ -37,7 +43,7 @@
         },
         {
           "name": "ERIKA",
-          "photo": "images/citra.jpg",
+          "photo": "",
           "spouse": null,
           "grandchildren": []
         },
