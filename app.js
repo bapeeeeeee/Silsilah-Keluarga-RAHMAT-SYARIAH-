@@ -85,19 +85,29 @@ function renderFamily() {
 }
 
 /* =========================
-   KAKEK & NENEK
+   KAKEK & NENEK (BISA DIKLIK)
 ========================= */
 function renderGrandparents(grandparents) {
     const container = document.getElementById("grandparents");
     container.innerHTML = "";
 
     grandparents.forEach(person => {
-        container.innerHTML += createPersonCard(person);
+        const photo = (person.photo && person.photo !== "" && person.photo !== "-")
+            ? `<img class="photo" src="${person.photo}" alt="${person.name}">`
+            : `<div class="photo placeholder">👤</div>`;
+
+        container.innerHTML += `
+            <div class="person-card" style="cursor: pointer;" onclick="openGrandparentModal('${person.id}')">
+                ${photo}
+                <h3 class="person-name">${person.name || "Nama Belum Diisi"}</h3>
+                <small style="color: var(--muted); display: block; margin-top: 5px;">Klik untuk detail</small>
+            </div>
+        `;
     });
 }
 
 /* =========================
-   ANAK-ANAK
+   ANAK-ANAK (GENERASI 2)
 ========================= */
 function renderChildren(children) {
     const container = document.getElementById("children");
@@ -117,21 +127,45 @@ function renderChildren(children) {
     });
 }
 
-function createPersonCard(person) {
-    const photo = (person.photo && person.photo !== "" && person.photo !== "-")
-        ? `<img class="photo" src="${person.photo}" alt="${person.name}">`
-        : `<div class="photo placeholder">👤</div>`;
+/* =========================
+   MODAL POPUP KAKEK / NENEK
+========================= */
+function openGrandparentModal(id) {
+    const person = familyData.people.find(p => p.id === id);
+    if (!person) return;
 
-    return `
-        <div class="person-card">
-            ${photo}
-            <h3 class="person-name">${person.name || "Nama Belum Diisi"}</h3>
+    const modalBody = document.getElementById("modal-body");
+
+    const mainPhoto = (person.photo && person.photo !== "" && person.photo !== "-") 
+        ? `<img src="${person.photo}" class="couple-photo" style="width:120px; height:120px;" alt="${person.name}">` 
+        : `<div class="couple-photo placeholder" style="width:120px; height:120px; font-size:50px;">👤</div>`;
+
+    const birthInfo = person.birth ? person.birth : "-";
+    const deathInfo = person.death ? person.death : "-";
+    const notesInfo = person.notes ? person.notes : "";
+
+    modalBody.innerHTML = `
+        <div class="modal-header">
+            <h2>${person.name}</h2>
+            <p style="color: var(--muted); margin-top: -5px;">Generasi 1 (Kakek / Nenek)</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 25px;">
+            ${mainPhoto}
+        </div>
+
+        <div style="background: #f8faf7; padding: 20px; border-radius: 16px; font-size: 15px; line-height: 1.8;">
+            <div><strong>🎂 Lahir:</strong> ${birthInfo}</div>
+            <div><strong>🕊️ Wafat:</strong> ${deathInfo}</div>
+            ${notesInfo ? `<div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"><strong>📌 Keterangan:</strong> ${notesInfo}</div>` : ''}
         </div>
     `;
+
+    document.getElementById("family-modal").style.display = "block";
 }
 
 /* =========================
-   MODAL DETAIL KELUARGA
+   MODAL DETAIL KELUARGA (GEN 2)
 ========================= */
 function openModal(index) {
     const children = familyData.people.filter(person => person.generation === 2);
