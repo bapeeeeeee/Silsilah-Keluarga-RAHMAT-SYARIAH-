@@ -22,12 +22,17 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-/* HEADER */
+/* HEADER DENGAN BACKGROUND FOTO & OVERLAY HIJAU */
 .hero {
     text-align: center;
     padding: 70px 20px 80px;
     color: white;
-    background: linear-gradient(135deg, #243e2b, #416a48);
+    /* Ganti photos/background.jpg sesuai nama foto background kamu */
+    background: linear-gradient(135deg, rgba(36, 62, 43, 0.85), rgba(65, 106, 72, 0.85)), 
+                url("photos/headerkeluarga.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .badge {
@@ -49,7 +54,7 @@ body {
 
 .hero p {
     margin: 0;
-    color: rgba(255,255,255,.75);
+    color: rgba(255,255,255,.85);
 }
 
 /* CONTAINER */
@@ -198,7 +203,7 @@ h2 {
     font-size: 20px;
 }
 
-/* KARTU REKAPITULASI (SIMPEL DI BAWAH) */
+/* REKAPITULASI */
 .summary-card {
     background: white;
     margin-top: 25px;
@@ -241,7 +246,7 @@ h2 {
     color: var(--primary);
 }
 
-/* MODAL STYLES */
+/* MODAL POPUP */
 .modal {
     display: none;
     position: fixed;
@@ -387,7 +392,7 @@ h2 {
     object-fit: cover;
 }
 
-/* INFO */
+/* INFO & FOOTER */
 .info {
     margin-top: 20px;
     padding: 30px;
@@ -396,16 +401,11 @@ h2 {
     box-shadow: var(--shadow);
 }
 
-.info h2 {
-    margin-bottom: 10px;
-}
-
 .info p {
     color: var(--muted);
     line-height: 1.7;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     color: var(--muted);
